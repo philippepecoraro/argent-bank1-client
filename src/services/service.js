@@ -2,7 +2,7 @@ import axios from "axios";
 import authHeader from "./authHeader";
 
 //const API_URL = "http://localhost:3001/api/v1/";
-const API_URL = "https://argent-bank1-server.onrender.com/api/v1";
+const API_URL = "https://argent-bank1-server.onrender.com/api/v1/";
 
 const register = (email, password, firstName, LastName) => {
   return axios.post(API_URL + "user/signup", {
