@@ -3,14 +3,14 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { updateUser } from "./updateSlice";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 
 const UpdateUserForm = () => {
   const { user } = useSelector((state) => state.user);
   const userFirstName = user.firstName;
   const userLaststName = user.lastName;
   const dispatch = useDispatch();
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
 
   const validationSchema = Yup.object().shape({
     firstName: Yup.string()
@@ -33,8 +33,8 @@ const UpdateUserForm = () => {
     dispatch(updateUser({ firstName, lastName }))
       .then((response) => {
         if (response) {
-          //  window.location.reload();
-          navigate("/");
+          window.location.reload();
+          // navigate("/");
         }
       })
       .catch((error) => {
@@ -80,8 +80,8 @@ const UpdateUserForm = () => {
                 type="reset"
                 onClick={() => {
                   formik.resetForm();
-                  // window.location.reload();
-                  navigate("/");
+                  window.location.reload();
+                  // navigate("/");
                 }}
               >
                 Cancel
