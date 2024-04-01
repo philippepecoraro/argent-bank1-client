@@ -6,6 +6,8 @@ import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../features/login/loginSlice";
+import { useEffect } from "react";
+import { profile } from "../../features/profile/profilSlice";
 
 const Navbar = () => {
   const jwtLocalToken = JSON.parse(localStorage.getItem("jwtToken"));
@@ -17,6 +19,10 @@ const Navbar = () => {
   const logOut = () => {
     dispatch(logout());
   };
+
+  useEffect(() => {
+    if (jwtLocalToken || jwtSessionToken) dispatch(profile());
+  }, [dispatch, jwtLocalToken, jwtSessionToken]);
 
   return (
     <header>
@@ -49,8 +55,7 @@ const Navbar = () => {
                     className="main-nav-item-icon"
                   />
                   <span className="main-nav-item-firstName">
-                    {" "}
-                    {user.firstName}{" "}
+                    {user.firstName}
                   </span>
                 </Link>
               </div>

@@ -2,17 +2,8 @@ import "./Home.css";
 import iconChat from "../../assets/icon-chat.png";
 import iconMoney from "../../assets/icon-money.png";
 import iconSecurity from "../../assets/icon-security.png";
-import { useDispatch } from "react-redux";
-import { profile } from "../profile/profilSlice";
-import { useEffect } from "react";
 
 const Home = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(profile());
-  }, [dispatch]);
-
   return (
     <div>
       <main className="home">
