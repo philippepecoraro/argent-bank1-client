@@ -33,12 +33,14 @@ const loginSlice = createSlice({
     [login.pending]: (state) => {
       state.isLoading = true;
       state.error = null;
+      state.loadingError = false;
     },
 
     [login.fulfilled]: (state) => {
       state.isLoggedIn = true;
       state.isLoading = false;
       state.error = null;
+      state.loadingError = false;
     },
     [login.rejected]: (state, action) => {
       state.error = action.payload.message;
