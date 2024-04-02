@@ -4,14 +4,22 @@
 }
 
 .input-input-wrapper {     
-    display: flex;
-    flex-direction: row;
+    display: flex;    
+    flex-direction: column;
     justify-content: center;
     margin-bottom: 1rem;
 }
 
-.input-firstName-wrapper {
-    margin-right: 1rem;    
+.input-firstName-wrapper {    
+    display: flex;
+    flex-direction: column;
+}
+
+.input-lastName-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .input-firstName-wrapper input, 
@@ -29,6 +37,7 @@
 .save-button, .cancel-button {    
     width: 7rem;
     height: 28px;  
+    cursor: pointer;
 }
 
 .save-button {

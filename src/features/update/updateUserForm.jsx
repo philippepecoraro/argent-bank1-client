@@ -53,6 +53,7 @@ const UpdateUserForm = () => {
           <Form className="input-form">
             <div className="input-input-wrapper">
               <div className="input-firstName-wrapper">
+                <label htmlFor="firstName">FirstName</label>
                 <Field name="firstName" type="text" id="firstName" />
                 <ErrorMessage
                   name="firstName"
@@ -61,6 +62,7 @@ const UpdateUserForm = () => {
                 />
               </div>
               <div className="input-lastName-wrapper">
+                <label htmlFor="lastName">LastName</label>
                 <Field name="lastName" type="text" id="lastName" />
                 <ErrorMessage
                   name="lastName"
